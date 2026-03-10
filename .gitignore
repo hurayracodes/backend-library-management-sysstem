@@ -1,4 +1,25 @@
-echo "node_modules/" >> .gitignore
-echo ".env" >> .gitignore
-echo "package-lock.json" >> .gitignore
-echo "dist/" >> .gitignore
+# dependencies
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# environment variables
+.env
+.env.local
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# logs
+logs/
+*.log
+
+# build files
+dist/
+build/
