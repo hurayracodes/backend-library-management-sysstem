@@ -38,7 +38,17 @@ const bookSchema = new mongoose.Schema({
   description: {
     type: String,
     default: ''
-  }
+  },
+  // New PDF fields
+  pdfFile: {
+    filename: String,      // Original filename
+    path: String,          // Path to file
+    size: Number,          // File size in bytes
+    mimetype: String,      // application/pdf
+    uploadedAt: Date       // Upload date
+  },
+    isPdfAvailable: { type: Boolean, default: false },
+    allowDownload: { type: Boolean, default: false }
 }, {
   timestamps: true
 })

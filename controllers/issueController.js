@@ -298,7 +298,7 @@ export const getMyIssues = async (req, res, next) => {
       userId,
       status: { $in: ['issued', 'overdue'] }
     })
-      .populate('book', 'title author isbn coverImage category')
+      .populate('book', 'title author isbn coverImage category isPdfAvailable pdfUrl pdfFile allowDownload description')
       .sort({ issueDate: -1 });
 
     res.status(200).json({
@@ -322,7 +322,7 @@ export const getMyHistory = async (req, res, next) => {
       userId,
       status: 'returned'
     })
-      .populate('book', 'title author isbn coverImage category')
+      .populate('book', 'title author isbn coverImage category isPdfAvailable pdfUrl pdfFile allowDownload description')
       .sort({ returnDate: -1 });
 
     res.status(200).json({

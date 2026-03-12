@@ -10,11 +10,7 @@ const issueSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Student name is required']
   },
-  book: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Book',
-    required: [true, 'Book is required']
-  },
+   book: { type: mongoose.Schema.Types.ObjectId, ref: 'Book', required: true }, // ✅ 'book' field
   bookTitle: {
     type: String,
     required: [true, 'Book title is required']
